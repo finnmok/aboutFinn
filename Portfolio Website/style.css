@@ -1,0 +1,92 @@
+/* Reset some basic elements */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header and Navigation Styles */
+header {
+    background: #232D4B;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #E57200;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Playfair_Display variant1", Tofu;
+    font-size: 32px;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#education {
+    font-family: 'Playfair Display variant0', Tofu;
+}
+
+#education h4 {
+    color: #E57200;
+    margin-top: 10px; /* Adjusts space above the h4 */
+    margin-bottom: -25px; /* Adjusts space below the h4 */
+}
+
+#education h5 {
+    font-family: 'Playfair Display variant0', Tofu;
+}
+
+#education h6 {
+    margin-top: -20px; /* Adjusts space above the h4 */
+    margin-bottom: 10px; /* Adjusts space below the h4 */
+}
+
+#education h6:last-of-type {
+    margin-top: -15px; /* Adds more space below the last h6 of a section/group */
+}
+
+/* Footer styles */
+footer {
+    background: #232D4B;
+    color: #E57200;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Playfair Display variant0', Tofu;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-bottom: 10px;
+    }
+}
