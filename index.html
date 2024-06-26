@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .dropdown {
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            margin-left: 20px;
+        }
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,20 +33,146 @@
 <main>
     <section id="education">
         <h2>Education</h2>
-        <h4>University of Virginia, School of Data Science</h3>
+        <h4>University of Virginia, School of Data Science</h4>
         <h5>June 2024 - May 2025</h5>
         <h6>Masters of Science, Data Science</h6>
         
-        <h4>University of Virginia, College of Arts and Sciences</h3>
+        <h4>University of Virginia, College of Arts and Sciences</h4>
         <h5>August 2021 - May 2024</h5>
         <h6>Bachelors of Arts, Statistics</h6>
         <h6>Minors, Computer Science and Art History</h6>
-
     </section>
 
     <section id="courses">
         <h2>Courses</h2>
-        <p>To be added.</p>
+        <h3>Undergraduate Courses</h3>
+        
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Art History</h4>
+            <div class="dropdown-content">
+                <h5>ARTH 1051: History of Art I</h5>
+                <h5>ARTH 2451: Modern Art, 1900-1945</h5>
+                <h5>ARTH 2471: Art Since 1945</h5>
+                <h5>ARTH 3591: Art History Colloquium (Ancient Urbanization)</h5>
+                <h5>ARTH 3591: Art History Colloquium (Medieval Mayhem)</h5>
+                <h5>ARTH 4591: Seminar in the History of Art</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Chemistry</h4>
+            <div class="dropdown-content">
+                <h5>CHEM 1410: Intro College Chemistry I</h5>
+                <h5>CHEM 1420: Intro College Chemistry II</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Computer Science</h4>
+            <div class="dropdown-content">
+                <h5>CS 1112: Introduction to Programming</h5>
+                <h5>CS 2100: Data Structures and Algo 1</h5>
+                <h5>CS 2120: Discrete Math and Theory 1</h5>
+                <h5>CS 2130: Computer Systems and Org 1</h5>
+                <h5>CS 3140: Software Dev Essentials</h5>
+                <h5>CS 3710: Intro to Cybersecurity</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Economics</h4>
+            <div class="dropdown-content">
+                <h5>ECON 2020: Principles of Econ: Macroecon</h5>
+                <h5>ECON 2010: Principles of Econ: Microecon</h5>
+                <h5>ECON 4610: Economic Development</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>English</h4>
+            <div class="dropdown-content">
+                <h5>ENWR 1000T: Non-UVa Transfer/Test Credit</h5>
+                <h5>ENWR 1510: Writing and Critical Inquiry</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>History</h4>
+            <div class="dropdown-content">
+                <h5>HIST 1000T: Non-UVa Transfer/Test Credit</h5>
+                <h5>HIUS 3031: Era of the American Revolution</h5>
+                <h5>HIUS 3131: America in the Gilded Age</h5>
+                <h5>HIUS 3162: Digitizing America</h5>
+                <h5>HIUS 3261: History of the American West</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Kinesiology</h4>
+            <div class="dropdown-content">
+                <h5>KLPA 1120: Volleyball</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Latin</h4>
+            <div class="dropdown-content">
+                <h5>LATI 2010: Intermediate Latin I</h5>
+                <h5>LATI 3100: Vergil</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Entrepreneurship</h4>
+            <div class="dropdown-content">
+                <h5>ENTP 1559: New Course in Entrepreneurship (Find & Engage: Important People)</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Mathematics</h4>
+            <div class="dropdown-content">
+                <h5>MATH 1310: Calculus I</h5>
+                <h5>MATH 1320: Calculus II</h5>
+                <h5>MATH 2315: Adv Calculus and Lin Alg I</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Political Science</h4>
+            <div class="dropdown-content">
+                <h5>PLAP 1000T: Non-UVa Transfer/Test Credit</h5>
+            </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Statistics</h4>
+            <div class="dropdown-content">
+                <h5>STAT 1120: Introduction to Statistics</h5>
+                <h5>STAT 3080: From Data to Knowledge</h5>
+                <h5>STAT 3110: Foundations of Statistics</h5>
+                <h5>STAT 3120: Intro Mathematical Statistics</h5>
+                <h5>STAT 3130: Design & Analysis of Sample Surveys</h5>
+                <h5>STAT 3220: Intro to Regression Analysis</h5>
+                <h5>STAT 3250: Data Analysis with Python</h5>
+                <h5>STAT 3280: Data Visualization and Management</h5>
+                <h5>STAT 4996: Capstone</h5>
+                <h5>STAT 5310: Clinical Trials Methodology</h5>
+                <h5>STAT 5430: Statistical Computing with Python and R</h5>
+                <h5>STAT 5630: Statistical Machine Learning</h5>
+                <h5>STAT 6260: Categorical Data Analysis</h5>
+            </div>
+        </div>
+        
+        <h3>Graduate Courses</h3>
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <h4>Data Science</h4>
+            <div class="dropdown-content">
+                <h5>DS 5100: Programming for Data Science</h5>
+                <h5>DS 6001: Practice and Application of Data Science</h5>
+                <h5>STAT 6021: Linear Models for Data Science</h5>
+            </div>
+        </div>
     </section>
 
     <section id="experience">
@@ -46,6 +184,12 @@
 <footer>
     <p>Finn Mokrzycki © 2024</p>
 </footer>
+
+<script>
+    function toggleDropdown(element) {
+        element.classList.toggle("open");
+    }
+</script>
 
 </body>
 </html>
