@@ -11,7 +11,7 @@
         }
         .expandable-content {
             display: none;
-            margin-left: 20px;
+            margin-left: 35px;
         }
         .club-name {
             cursor: pointer;
@@ -28,13 +28,9 @@
         }
     </style>
     <script>
-        function toggleContent(id) {
-            const content = document.getElementById(id);
-            if (content.style.display === "none") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
+        function toggleContent(event) {
+            const content = event.target.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
 
         function saveSelections() {
@@ -71,18 +67,12 @@
             }
         }
 
-        function loadFromCode() {
-            const code = document.getElementById('loadCode').value;
-            const binaryString = atob(code);
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            binaryString.split('').forEach((char, index) => {
-                checkboxes[index].checked = char === '1';
-            });
-            saveSelections();
-        }
-
         window.onload = function() {
             loadSelections();
+            const clubNames = document.querySelectorAll('.club-name');
+            clubNames.forEach(clubName => {
+                clubName.addEventListener('click', toggleContent);
+            });
         }
 
         function saveAndGoToMap() {
@@ -130,7 +120,5 @@
     <button onclick="generateCode()">Generate Shareable FriendCode</button>
     <input type="text" id="shareCode" readonly>
     <br><br>
-    <input type="text" id="loadCode" placeholder="Enter FriendCode">
-    <button onclick="loadFromCode()">Load FriendCode</button>
 </body>
 </html>

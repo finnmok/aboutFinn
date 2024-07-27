@@ -58,9 +58,19 @@
     @media print {
         .grid-item {
             color: transparent; /* Hide numbers when printing */
+            background-color: white !important; /* Default color */
         }
-        .selected-user, .selected-shared, .selected-both {
+        .selected-user {
             color: white !important; /* Show numbers on selected items */
+            background-color: #ff0f0fd2 !important; /* Blue for user's selections */
+        }
+        .selected-shared {
+            color: white !important; /* Show numbers on selected items */
+            background-color: #fffb1c !important; /* Orange for shared selections */
+        }
+        .selected-both {
+            color: white !important; /* Show numbers on selected items */
+            background-color: #ff9720 !important; /* Green for both selections */
         }
         input, button {
             display: none; /* Hide textboxes and buttons when printing */
