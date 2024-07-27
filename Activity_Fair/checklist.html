@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA Clubs and Departments Checklist</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .expandable-content {
+            display: none;
+            margin-left: 20px;
+        }
+        .club-name {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+        function saveSelections() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const selections = [];
+            checkboxes.forEach((checkbox, index) => {
+                if (checkbox.checked) {
+                    selections.push(index + 1); // Save the index as 1-based
+                }
+            });
+            localStorage.setItem('clubSelections', JSON.stringify(selections));
+            alert('Selections saved! You can now view the interactive map.');
+        }
+
+        function generateCode() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let binaryString = '';
+            checkboxes.forEach((checkbox) => {
+                binaryString += checkbox.checked ? '1' : '0';
+            });
+            const code = btoa(binaryString);
+            document.getElementById('shareCode').value = code;
+        }
+
+        function loadSelections() {
+            const selections = JSON.parse(localStorage.getItem('clubSelections'));
+            if (selections) {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                selections.forEach(index => {
+                    if (checkboxes[index - 1]) { // Adjust back to 0-based
+                        checkboxes[index - 1].checked = true;
+                    }
+                });
+            }
+        }
+
+        function loadFromCode() {
+            const code = document.getElementById('loadCode').value;
+            const binaryString = atob(code);
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            binaryString.split('').forEach((char, index) => {
+                checkboxes[index].checked = char === '1';
+            });
+            saveSelections();
+        }
+
+        window.onload = function() {
+            loadSelections();
+        }
+
+        function saveAndGoToMap() {
+            saveSelections();
+            location.href = 'testchat.html';
+        }
+
+        
+    </script>
+</head>
+<body>
+    <h1>Sports Clubs</h1>
+    <ul>
+        <li>
+            <input type="checkbox" id="club1a">
+            <span class="club-name" onclick="toggleContent('content1a')">Ballroom Dance Club at UVA</span>
+            <div id="content1a" class="expandable-content">More information about Ballroom Dance Club at UVA.</div>
+        </li>
+        <li>
+            <input type="checkbox" id="club1b">
+            <span class="club-name" onclick="toggleContent('content1b')">Club Badminton at UVA</span>
+            <div id="content1b" class="expandable-content">More information about Club Badminton at UVA.</div>
+        </li>
+        <!-- Add more clubs following the same structure -->
+    </ul>
+
+    <h1>UVA Departments</h1>
+    <ul>
+        <li>
+            <input type="checkbox" id="department31b">
+            <span class="club-name" onclick="toggleContent('content31b')">CAPS</span>
+            <div id="content31b" class="expandable-content">More information about CAPS.</div>
+        </li>
+        <li>
+            <input type="checkbox" id="department32a">
+            <span class="club-name" onclick="toggleContent('content32a')">Hoos First</span>
+            <div id="content32a" class="expandable-content">More information about Hoos First.</div>
+        </li>
+        <!-- Add more departments following the same structure -->
+    </ul>
+
+    <button onclick="saveSelections()">Save Selections</button>
+    <button onclick="saveAndGoToMap()">Go to Interactive Map</button>
+    <br><br>
+    <button onclick="generateCode()">Generate Shareable FriendCode</button>
+    <input type="text" id="shareCode" readonly>
+    <br><br>
+    <input type="text" id="loadCode" placeholder="Enter FriendCode">
+    <button onclick="loadFromCode()">Load FriendCode</button>
+</body>
+</html>

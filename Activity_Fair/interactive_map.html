@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Map</title>
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(10, 50px);
+        grid-template-rows: repeat(10, 50px);
+        gap: 5px;
+    }
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+<div class="grid-container">
+<a href="link1.html" class="grid-item" style="background-color: #ff0000;">1</a><a href="link2.html" class="grid-item" style="background-color: #00ff00;">2</a><a href="link3.html" class="grid-item" style="background-color: #0000ff;">3</a>
+</div>
+</body>
+</html>
