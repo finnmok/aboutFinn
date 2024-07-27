@@ -101,9 +101,9 @@
 
         allSelections.forEach(index => {
             const img = document.createElement('img');
-            img.src = `ClubImage/club${index}.JPG`;
+            img.src = `Club_Images/club${index}.JPG`;
             img.alt = `Club ${index}`;
-            img.onerror = () => { console.error(`Image not found: ClubImage/club${index}.JPG`); }; // Add error handling
+            img.onerror = () => { console.error(`Image not found: Club_Images/club${index}.JPG`); }; // Add error handling
             imageContainer.appendChild(img);
         });
     }
