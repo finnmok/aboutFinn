@@ -7,22 +7,22 @@
 <style>
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(12, 50px); /* Adjust according to your layout */
-        grid-template-rows: repeat(8, 50px); /* Adjust according to your layout */
+        grid-template-columns: repeat(12, 1fr); /* Responsive columns */
+        grid-template-rows: auto; /* Adjust according to your layout */
         gap: 5px;
         justify-content: center;
         align-items: center;
+        width: 100%;
     }
     .grid-item {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 18px;
+        font-size: 2vw; /* Responsive font size */
         font-weight: bold;
         color: white;
         text-decoration: none;
-        height: 50px;
-        width: 50px;
+        padding: 1vw; /* Responsive padding */
         background-color: white; /* Default color */
         border: 1px solid black;
         cursor: pointer;
@@ -55,28 +55,12 @@
         font-size: 18px;
         font-weight: bold;
     }
-    @media (max-width: 768px) {
-        .grid-container {
-            grid-template-columns: repeat(6, 1fr); /* 6 columns for tablets */
-        }
+    @media print {
         .grid-item {
-            height: 40px; /* Smaller height for smaller screens */
+            color: transparent; /* Hide numbers when printing */
         }
-        .image-item img {
-            width: 150px; /* Smaller images for smaller screens */
-            height: 150px;
-        }
-    }
-    @media (max-width: 480px) {
-        .grid-container {
-            grid-template-columns: repeat(3, 1fr); /* 3 columns for mobile phones */
-        }
-        .grid-item {
-            height: 30px; /* Smaller height for mobile screens */
-        }
-        .image-item img {
-            width: 100px; /* Smaller images for mobile screens */
-            height: 100px;
+        .selected-user, .selected-shared, .selected-both {
+            color: white !important; /* Show numbers on selected items */
         }
     }
 </style>
