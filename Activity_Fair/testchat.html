@@ -44,10 +44,16 @@
         gap: 10px;
     }
     .image-container img {
-        width: 100px;
-        height: 100px;
+        width: 250px;
+        height: 250px;
         object-fit: cover;
         border: 1px solid black;
+    }
+    .image-item span {
+        display: block;
+        margin-top: 5px;
+        font-size: 18px;
+        font-weight: bold;
     }
 </style>
 <script>
@@ -100,11 +106,22 @@
         imageContainer.innerHTML = ''; // Clear existing images
 
         allSelections.forEach(index => {
+            const imageItem = document.createElement('div');
+            imageItem.classList.add('image-item');
+            
             const img = document.createElement('img');
             img.src = `Club_Images/club${index}.JPG`;
             img.alt = `Club ${index}`;
             img.onerror = () => { console.error(`Image not found: Club_Images/club${index}.JPG`); }; // Add error handling
-            imageContainer.appendChild(img);
+
+            const span = document.createElement('span');
+            span.textContent = `Club ${index}`;
+
+            imageItem.appendChild(img);
+            imageItem.appendChild(span);
+            imageContainer.appendChild(imageItem);
+
+            console.log(`Loading image: Club_Images/club${index}.JPG`); // Debugging log
         });
     }
 
