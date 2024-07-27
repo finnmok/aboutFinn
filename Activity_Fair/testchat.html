@@ -55,6 +55,30 @@
         font-size: 18px;
         font-weight: bold;
     }
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-columns: repeat(6, 1fr); /* 6 columns for tablets */
+        }
+        .grid-item {
+            height: 40px; /* Smaller height for smaller screens */
+        }
+        .image-item img {
+            width: 150px; /* Smaller images for smaller screens */
+            height: 150px;
+        }
+    }
+    @media (max-width: 480px) {
+        .grid-container {
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for mobile phones */
+        }
+        .grid-item {
+            height: 30px; /* Smaller height for mobile screens */
+        }
+        .image-item img {
+            width: 100px; /* Smaller images for mobile screens */
+            height: 100px;
+        }
+    }
 </style>
 <script>
     function loadSelections() {
@@ -128,6 +152,11 @@
     window.onload = function() {
         loadSelections();
     }
+
+    function printPage() {
+        window.print();
+    }
+    
 </script>
 </head>
 <body>
@@ -183,26 +212,13 @@
     <div class="grid-item">48</div>
     <div class="grid-item">49</div>
     <div class="grid-item">50</div>
-    <div class="grid-item">51</div>
-    <div class="grid-item">52</div>
-    <div class="grid-item">53</div>
-    <div class="grid-item">54</div>
-    <div class="grid-item">55</div>
-    <div class="grid-item">56</div>
-    <div class="grid-item">57</div>
-    <div class="grid-item">58</div>
-    <div class="grid-item">59</div>
-    <div class="grid-item">60</div>
-    <div class="grid-item">61</div>
-    <div class="grid-item">62</div>
-    <div class="grid-item">63</div>
-    <div class="grid-item">64</div>
 </div>
 
 <br>
 <input type="text" id="shareCode" placeholder="Enter Share Code">
 <button onclick="loadSharedSelections()">Load Shared Selections</button>
 <button onclick="loadImages()">Load Images</button>
+<button onclick="printPage()">Print Page</button>
 
 <div id="imageContainer" class="image-container"></div>
 

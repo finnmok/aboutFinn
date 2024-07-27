@@ -17,6 +17,15 @@
             cursor: pointer;
             font-weight: bold;
         }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-container input[type="checkbox"] {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
     </style>
     <script>
         function toggleContent(id) {
@@ -87,12 +96,12 @@
 <body>
     <h1>Sports Clubs</h1>
     <ul>
-        <li>
+        <li class="checkbox-container">
             <input type="checkbox" id="club1a">
             <span class="club-name" onclick="toggleContent('content1a')">Ballroom Dance Club at UVA</span>
             <div id="content1a" class="expandable-content">More information about Ballroom Dance Club at UVA.</div>
         </li>
-        <li>
+        <li class="checkbox-container">
             <input type="checkbox" id="club1b">
             <span class="club-name" onclick="toggleContent('content1b')">Club Badminton at UVA</span>
             <div id="content1b" class="expandable-content">More information about Club Badminton at UVA.</div>
@@ -102,12 +111,12 @@
 
     <h1>UVA Departments</h1>
     <ul>
-        <li>
+        <li class="checkbox-container">
             <input type="checkbox" id="department31b">
             <span class="club-name" onclick="toggleContent('content31b')">CAPS</span>
             <div id="content31b" class="expandable-content">More information about CAPS.</div>
         </li>
-        <li>
+        <li class="checkbox-container">
             <input type="checkbox" id="department32a">
             <span class="club-name" onclick="toggleContent('content32a')">Hoos First</span>
             <div id="content32a" class="expandable-content">More information about Hoos First.</div>
