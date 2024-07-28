@@ -97,26 +97,11 @@
         transform: scale(1.05);
     }
     @media print {
-        .grid-item {
-            color: transparent; /* Hide numbers when printing */
-            background-color: white !important;
-        }
-        .selected-user {
-            color: white !important; /* Show numbers on selected items */
-            background-color: #ff0f0fd2 !important; /* Red for user's selections */
-        }
-        .selected-shared {
-            color: white !important; /* Show numbers on selected items */
-            background-color: #fffb1c !important; /* Yellow for shared selections */
-        }
-        .selected-both {
-            color: white !important; /* Show numbers on selected items */
-            background-color: #ff9720 !important; /* Orange for both selections */
-        }
         input, button {
             display: none; /* Hide textboxes and buttons when printing */
         }
     }
+    
 </style>
 <script>
     function loadSelections() {
