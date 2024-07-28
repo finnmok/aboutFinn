@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UVA Clubs and Departments Checklist</title>
+    <title>UVA CIO Checklist</title>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #006699;
+            border-bottom: 2px solid #006699;
+            padding-bottom: 5px;
+        }
         ul {
             list-style-type: none;
             padding: 0;
@@ -12,19 +24,62 @@
         .expandable-content {
             display: none;
             margin-left: 35px;
+            padding: 10px;
+            background-color: #e6e6fa;
+            border-left: 4px solid #006699;
         }
         .club-name {
             cursor: pointer;
             font-weight: bold;
+            color: #006699;
+            display: inline-block;
+            padding: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .club-name:hover {
+            background-color: #e6e6fa;
+            color: #004d80;
         }
         .checkbox-container {
             display: flex;
             align-items: center;
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .checkbox-container input[type="checkbox"] {
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             margin-right: 10px;
+            cursor: pointer;
+        }
+        .describe-goal {
+            font-size: 16px;
+            color: #004d80;
+            margin-bottom: 20px;
+            display: block;
+        }
+        button {
+            background-color: #006699;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #004d80;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
     </style>
     <script>
@@ -79,22 +134,27 @@
             saveSelections();
             location.href = 'testchat.html';
         }
-
-        
     </script>
 </head>
 <body>
+    <h1>UVA CIO Checklist</h1>
+    <span class = "describe-goal">"Check boxes for clubs and organizations you are interested in.
+        When you finish, click 
+        <b>Save Selections</b> to save your choices and
+        <b>Go to Interactive Map</b> to view the map for the club stand locations at the Activities Fair!"</span>
+    </span>
+    <span class = "describe-goal">-StudCo Data Scientists <b>Finn Mokrzycki</b> and <b>Alice Vadney</b></span>
     <h1>Sports Clubs</h1>
     <ul>
         <li class="checkbox-container">
-            <input type="checkbox" id="club1a">
+            <input type="checkbox" id="club1b">
             <span class="club-name" onclick="toggleContent('content1a')">Ballroom Dance Club at UVA</span>
-            <div id="content1a" class="expandable-content">More information about Ballroom Dance Club at UVA.</div>
+            <div id="content1b" class="expandable-content">Do the Most Swankified Dancing!</div>
         </li>
         <li class="checkbox-container">
-            <input type="checkbox" id="club1b">
-            <span class="club-name" onclick="toggleContent('content1b')">Club Badminton at UVA</span>
-            <div id="content1b" class="expandable-content">More information about Club Badminton at UVA.</div>
+            <input type="checkbox" id="club1c">
+            <span class="club-name" onclick="toggleContent('content1b')">Club Pickleball</span>
+            <div id="content1c" class="expandable-content">Play Pickleball with the National Champion Team!</div>
         </li>
         <!-- Add more clubs following the same structure -->
     </ul>
@@ -104,7 +164,7 @@
         <li class="checkbox-container">
             <input type="checkbox" id="department31b">
             <span class="club-name" onclick="toggleContent('content31b')">CAPS</span>
-            <div id="content31b" class="expandable-content">More information about CAPS.</div>
+            <div id="content31b" class="expandable-content">Counseling and Psychological Services, Student Mental Health Outreach on Grounds</div>
         </li>
         <li class="checkbox-container">
             <input type="checkbox" id="department32a">

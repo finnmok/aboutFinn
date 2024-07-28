@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Entry</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function validateEmail() {
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value;
+            const errorElement = document.getElementById('error');
+            const validDomain = "@virginia.edu";
+
+            if (email.endsWith(validDomain)) {
+                errorElement.textContent = "";
+                logEmail(email);
+                location.href = 'checklist.html'; // Redirect to the checkbox screen
+            } else {
+                errorElement.textContent = "Please enter a valid Virginia email address.";
+            }
+        }
+
+        function logEmail(email) {
+            const timestamp = new Date().toISOString();
+            const emailData = JSON.parse(localStorage.getItem('emailData')) || [];
+            emailData.push({ email: email, timestamp: timestamp });
+            localStorage.setItem('emailData', JSON.stringify(emailData));
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Virginia Email</h2>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <div id="error" class="error"></div>
+        <button onclick="validateEmail()">Submit</button>
+    </div>
+</body>
+</html>
