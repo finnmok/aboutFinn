@@ -223,6 +223,9 @@
         input, button {
             display: none; /* Hide textboxes and buttons when printing */
         }
+        .fair-box {
+            page-break-after: always; /* Ensure each fair-box starts on a new page */
+        }
     }
     .arrow-container {
         text-align: center;
@@ -241,8 +244,36 @@
         background-color: #005c99;
         transform: scale(1.1);
     }
+    
 </style>
 <script>
+    let currentMapIndex = 0;
+    const mapContainers = document.querySelectorAll('.fair-box');
+
+    function showMap(index) {
+        mapContainers.forEach((container, i) => {
+            container.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextMap() {
+        currentMapIndex = (currentMapIndex + 1) % mapContainers.length;
+        showMap(currentMapIndex);
+    }
+
+    function loadSelections() {
+        const userSelections = JSON.parse(localStorage.getItem('clubSelections')) || [];
+        const items = document.querySelectorAll('.grid-item');
+        
+        userSelections.forEach(index => {
+            if (items[index - 1]) { // Adjust back to 0-based
+                items[index - 1].classList.add('selected-user');
+            }
+        });
+
+        localStorage.setItem('allSelections', JSON.stringify(userSelections)); // Save initial selections
+    }
+
     function loadSelections() {
         const userSelections = JSON.parse(localStorage.getItem('clubSelections')) || [];
         const items = document.querySelectorAll('.grid-item');
@@ -313,6 +344,7 @@
 
     window.onload = function() {
         loadSelections();
+        showMap(currentMapIndex); // Show the first map initially
     }
 
     function printPage() {
