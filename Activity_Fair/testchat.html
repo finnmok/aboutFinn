@@ -99,14 +99,15 @@
     @media print {
         .grid-item {
             background-color: white !important;
-            border: 2px solid #fff; /* Hide the borders on non-selected items */
+            border: 2px solid #e0e0e0; /* Hide the borders on non-selected items */
             color: white !important; /* Hide the numbers on non-selected items */
         }
         .selected-user,
         .selected-shared,
         .selected-both {
+            background-color: rgb(39, 139, 253) !important;
             border: 2px solid #006bb3 !important; /* Maintain border color */
-            color: white !important; /* Ensure text is visible */
+            color: rgb(255, 255, 255) !important; /* Ensure text is visible */
         }
         input, button {
             display: none; /* Hide textboxes and buttons when printing */
