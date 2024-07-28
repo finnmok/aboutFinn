@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newcomb Ballroom Seating</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2B579A;
+            color: #fff;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            gap: 10px;
+            justify-content: center;
+        }
+        .seat {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ccc;
+            border: 1px solid #888;
+            border-radius: 5px;
+            color: #000;
+        }
+        .seat.selected {
+            background-color: #000;
+            color: #fff;
+        }
+        .empty {
+            background-color: transparent;
+            border: none;
+        }
+        .info, .water {
+            grid-column: span 2;
+            text-align: center;
+            background-color: #ccc;
+            border-radius: 5px;
+            height: 60px;
+            line-height: 60px;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NEWCOMB BALLROOM</h1>
+        <div class="grid-container">
+            <div class="seat selected">256</div>
+            <div class="seat">257</div>
+            <div class="seat selected">258</div>
+            <div class="seat">259</div>
+            <div class="seat">260</div>
+            <div class="empty"></div>
+            <div class="seat">265</div>
+            <div class="seat">264</div>
+            <div class="seat">263</div>
+            <div class="seat">262</div>
+            <div class="seat">261</div>
+            <div class="empty"></div>
+            <div class="seat">266</div>
+            <div class="seat">267</div>
+            <div class="seat">268</div>
+            <div class="seat">269</div>
+            <div class="seat">270</div>
+            <div class="info">INFO</div>
+            <div class="seat">275</div>
+            <div class="seat">274</div>
+            <div class="seat">273</div>
+            <div class="seat">272</div>
+            <div class="seat">271</div>
+            <div class="empty"></div>
+            <div class="seat">276</div>
+            <div class="seat">277</div>
+            <div class="seat">278</div>
+            <div class="seat">279</div>
+            <div class="seat">280</div>
+            <div class="empty"></div>
+            <div class="seat">285</div>
+            <div class="seat">284</div>
+            <div class="seat">283</div>
+            <div class="seat">282</div>
+            <div class="seat">281</div>
+            <div class="water">WATER</div>
+        </div>
+    </div>
+</body>
+</html>
